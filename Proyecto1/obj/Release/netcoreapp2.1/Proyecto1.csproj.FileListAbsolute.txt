@@ -1,0 +1,14 @@
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\bin\Release\netcoreapp2.1\Proyecto1.deps.json
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\bin\Release\netcoreapp2.1\Proyecto1.runtimeconfig.json
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\bin\Release\netcoreapp2.1\Proyecto1.runtimeconfig.dev.json
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\bin\Release\netcoreapp2.1\Proyecto1.dll
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\bin\Release\netcoreapp2.1\Proyecto1.pdb
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.csprojAssemblyReference.cache
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.csproj.CoreCompileInputs.cache
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.RazorAssemblyInfo.cache
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.RazorAssemblyInfo.cs
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.AssemblyInfoInputs.cache
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.AssemblyInfo.cs
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.RazorTargetAssemblyInfo.cache
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.dll
+C:\Users\Andree Avalos\Documents\Bases 1\BD1-Proyecto1\Proyecto1\obj\Release\netcoreapp2.1\Proyecto1.pdb
