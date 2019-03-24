@@ -21,23 +21,15 @@ namespace Proyecto1.Controllers
         {
             try
             {
-                if (usuario.Usuario.Equals("admin") && usuario.Tipo == 1)
-                {
-                    if (usuario.Password.Equals("adminadmin"))
-                        return true;
-                    else
-                        return false;
-
-                }
-                else
-                {
                     SqlDataReader reader = null;
                     SqlConnection conexion = new SqlConnection
                     {
                         ConnectionString = cadenaconexion
                     };
                     string query = "";
-                    if (usuario.Tipo == 2)
+                    if (usuario.Tipo == 1)
+                        query = "SELECT contrasena from Admin where IDAdmin=\"" + usuario.Usuario+"\"";
+                    else if (usuario.Tipo == 2)
                         query = "SELECT password from Maestro where registro=" + usuario.Usuario ;
                     else if (usuario.Tipo == 3)
                         query = "SELECT password from Alumnos where carnet=" + usuario.Usuario;
@@ -73,7 +65,6 @@ namespace Proyecto1.Controllers
                     conexion.Close();
                     return false;
                 }
-            }
             catch { return false; }
 
         }
