@@ -1,0 +1,38 @@
+----------------------MODELOS DE JSON DE ENTRADA -------------------
+///////LOGIN
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Login
+retorna un true o false
+{
+	"Usuario": "1",
+	"Password": "1234",
+	"Tipo": 3
+}
+
+///// OBTENER ACTIVIDADES DE CADA ESTUDIANTE
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Actividad/id
+
+
+////MODELO PARA CREAR UNA ACTIVIDAD
+METODO: POST
+URL: http://bd1-p1.azurewebsites.net/api/Actividad
+retorna un true o false
+{
+    "Titulo": "Tarea 4",
+    "Descripcion": "Resumen de BD1",
+    "Fecha_publicacion": "",
+    "Fecha_entrega": "3/24/2019 9:05:33 PM",
+    "Ponderacion": 10,
+    "Id_maestro": 1,
+    "Id_materia": 1,
+    "Id_actividad": 0,
+    "Lst_asignados": [
+    	1,
+    	2
+    ]
+}
+////MODELO PARA ELIMINAR UNA ACTIVIDAD
+METODO:DELETE
+URL:http://bd1-p1.azurewebsites.net/api/Actividad/id
+retorna un true o false;

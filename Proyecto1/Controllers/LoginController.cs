@@ -28,11 +28,11 @@ namespace Proyecto1.Controllers
                     };
                     string query = "";
                     if (usuario.Tipo == 1)
-                        query = "SELECT contrasena from Admin where IDAdmin=\"" + usuario.Usuario+"\"";
+                        query = "SELECT contrasena from Admin where idadmin=\'" + usuario.Usuario+"\'";
                     else if (usuario.Tipo == 2)
                         query = "SELECT password from Maestro where registro=" + usuario.Usuario ;
                     else if (usuario.Tipo == 3)
-                        query = "SELECT password from Alumnos where carnet=" + usuario.Usuario;
+                        query = "SELECT password from Alumno where carnet=" + usuario.Usuario;
 
                     SqlCommand cmd = new SqlCommand
                     {

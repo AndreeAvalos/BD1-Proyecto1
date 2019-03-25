@@ -7,22 +7,29 @@ namespace Proyecto1.Models
 {
     public class AsignarActividad
     {
-        private string observacion, estado, archivo;
-        private int id_actividad, carnet;
+        private string titulo, descripcion, observacion, estado, nombre;
+        private int id_actividad;
+        private double nota, ponderacion;
 
-        public AsignarActividad(string observacion, string estado, string archivo, int id_actividad, int carnet)
+        public AsignarActividad(int id_actividad, string titulo, string descripcion, double ponderacion, string nombre, double nota, string observacion, string estado)
         {
+            this.id_actividad = id_actividad;
+            this.titulo = titulo;
+            this.descripcion = descripcion;
+            this.ponderacion = ponderacion;
+            this.nombre = nombre;
+            this.nota = nota;
             this.observacion = observacion;
             this.estado = estado;
-            this.archivo = archivo;
-            this.id_actividad = id_actividad;
-            this.carnet = carnet;
         }
 
+        public string Titulo { get => titulo; set => titulo = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public string Estado { get => estado; set => estado = value; }
-        public string Archivo { get => archivo; set => archivo = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
         public int Id_actividad { get => id_actividad; set => id_actividad = value; }
-        public int Carnet { get => carnet; set => carnet = value; }
+        public double Ponderacion { get => ponderacion; set => ponderacion = value; }
+        public double Nota { get => nota; set => nota = value; }
     }
 }
