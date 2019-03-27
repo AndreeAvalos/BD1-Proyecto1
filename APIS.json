@@ -1,6 +1,6 @@
 ----------------------MODELOS DE JSON DE ENTRADA -------------------
 ///////LOGIN
-METODO: GET
+METODO: POST
 URL: http://bd1-p1.azurewebsites.net/api/Login
 retorna un true o false
 {
@@ -36,3 +36,56 @@ retorna un true o false
 METODO:DELETE
 URL:http://bd1-p1.azurewebsites.net/api/Actividad/id
 retorna un true o false;
+
+//Metodo para obtener todos los maestros
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Maestro
+retorna todos los registros de maestros
+
+/////MODELO PARA CREAR UN MAESTRO 
+METODO: POST
+
+retorna -1 si no se creo, si se creo regresa su registro.
+URL: http://bd1-p1.azurewebsites.net/api/Maestro
+{
+    "Nombres": "Carlos Avalos",
+    "Telefono": "35385252",
+    "Direccion": "zona 1 Mixco",
+    "Correo": "aavalosoto@gmail.com",
+    "Fecha_nacimiento": "8/7/1995 12:00:00 AM",
+    "Password": "1234",
+    "Dpi": "2977840130108",
+    "Foto": "AAEBAQEBAQEB",
+    "Ciclo": "2019",
+    "Admin": "admin",
+    "Id_maestro": 0 //aqui no va nada al enviar, pero si al retornar
+	
+}
+////Metodo para obtener un maestro
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/2
+retorna un json con el maestro 
+
+////Metodo para eliminar un maestro
+Metodo: DELETE
+URL: http://bd1-p1.azurewebsites.net/api/Maestro
+retorna un true o false
+
+///METODO para hacer update a maestro
+Metodo: PUT
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/3 
+{
+    "Nombres": "Andree Avalos",
+    "Telefono": "35385252",
+    "Direccion": "zona 1 Mixco",
+    "Correo": "aavalosoto@gmail.com",
+    "Fecha_nacimiento": "8/7/1995 12:00:01 AM",
+    "Password": "1234",
+    "Dpi": "2977840130108",
+    "Foto": "AAEBAQEBAQEB",
+    "Ciclo": "2019",
+    "Admin": "admin",
+    "Id_maestro": 0
+}
+retorna un true o false
+

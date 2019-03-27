@@ -15,9 +15,9 @@ namespace Proyecto1.Controllers
     public class LoginController : ControllerBase
     {
         private string cadenaconexion = "Server=tcp:serverp1.database.windows.net,1433;Initial Catalog=Proyecto1;Persist Security Info=False;User ID=bases1;Password=2019DBp1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        // GET: api/Login
-        [HttpGet]
-        public Boolean Get(User usuario)
+        // POST: api/Login
+        [HttpPost]
+        public bool Post(User usuario)
         {
             try
             {

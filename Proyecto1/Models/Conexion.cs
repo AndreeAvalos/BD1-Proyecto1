@@ -9,7 +9,8 @@ namespace Proyecto1.Models
     {
         private string cadenaconexion = "Server=tcp:serverp1.database.windows.net,1433;Initial Catalog=Proyecto1;Persist Security Info=False;User ID=bases1;Password=2019DBp1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        public bool metodo_proc(string nombre_proc, List<Generico> lstcmd) {
+        public bool metodo_proc(string nombre_proc, List<Generico> lstcmd)
+        {
             bool salida = false;
             SqlConnection conexion = new SqlConnection
             {
@@ -23,17 +24,18 @@ namespace Proyecto1.Models
                     CommandType = CommandType.StoredProcedure
                 };
 
-                for (int i = 0; i < lstcmd.Count; i++) {
-                    
-                    if(lstcmd[i].Tipo==1)
+                for (int i = 0; i < lstcmd.Count; i++)
+                {
+
+                    if (lstcmd[i].Tipo == 1)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToInt32(lstcmd[i].Parametro));
-                    else if(lstcmd[i].Tipo==2)
+                    else if (lstcmd[i].Tipo == 2)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, lstcmd[i].Parametro.ToString());
                     else if (lstcmd[i].Tipo == 3)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToDateTime(lstcmd[i].Parametro));
                     else if (lstcmd[i].Tipo == 4)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToDouble(lstcmd[i].Parametro));
-                    else if(lstcmd[i].Tipo == 5)
+                    else if (lstcmd[i].Tipo == 5)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, null);
                 }
 
@@ -46,6 +48,56 @@ namespace Proyecto1.Models
             }
             conexion.Close();
             return salida;
+        }
+
+        public int Post(string nombre_proc, List<Generico> lstcmd)
+        {
+            int cod = -1;
+            SqlConnection conexion = new SqlConnection
+            {
+                ConnectionString = cadenaconexion
+            };
+            conexion.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(nombre_proc, conexion)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                SqlParameter paramCodRetorno = new SqlParameter("Identity", SqlDbType.Int);
+                paramCodRetorno.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(paramCodRetorno);
+
+                for (int i = 0; i < lstcmd.Count; i++)
+                {
+
+                    if (lstcmd[i].Tipo == 1)
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToInt32(lstcmd[i].Parametro));
+                    else if (lstcmd[i].Tipo == 2)
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, lstcmd[i].Parametro.ToString());
+                    else if (lstcmd[i].Tipo == 3)
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToDateTime(lstcmd[i].Parametro));
+                    else if (lstcmd[i].Tipo == 4)
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToDouble(lstcmd[i].Parametro));
+                    else if (lstcmd[i].Tipo == 5)
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToByte(lstcmd[i].Parametro));
+                }
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    cod = Convert.ToInt32(cmd.Parameters["Identity"].Value);
+                }
+                else
+                    cod = -1;
+                conexion.Close();
+                return cod;
+            }
+            catch (Exception)
+            {
+                return cod;
+            }
         }
 
         public List<Generico2> metodo_consulta(string query, int num_datos)
@@ -72,12 +124,13 @@ namespace Proyecto1.Models
                 while (reader.Read())
                 {
                     nuevo = new Generico2();
-                    for (int i = 0; i < num_datos; i++) {
+                    for (int i = 0; i < num_datos; i++)
+                    {
                         nuevo.Lst.Add(new Generico("" + i, reader.GetValue(i).ToString()));
                     }
                     lstGenerica.Add(nuevo);
                 }
-                
+
             }
             catch (Exception)
             {
