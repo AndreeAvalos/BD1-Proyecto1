@@ -2,13 +2,14 @@
 ///////LOGIN
 METODO: POST
 URL: http://bd1-p1.azurewebsites.net/api/Login
-retorna un true o false
+CUERPO JSON:
+
 {
 	"Usuario": "1",
 	"Password": "1234",
 	"Tipo": 3
 }
-
+retorna un true o false
 ///// OBTENER ACTIVIDADES DE CADA ESTUDIANTE
 METODO: GET
 URL: http://bd1-p1.azurewebsites.net/api/Actividad/id
@@ -17,7 +18,7 @@ URL: http://bd1-p1.azurewebsites.net/api/Actividad/id
 ////MODELO PARA CREAR UNA ACTIVIDAD
 METODO: POST
 URL: http://bd1-p1.azurewebsites.net/api/Actividad
-retorna un true o false
+CUERPO JSON:
 {
     "Titulo": "Tarea 4",
     "Descripcion": "Resumen de BD1",
@@ -32,6 +33,7 @@ retorna un true o false
     	2
     ]
 }
+retorna un true o false
 ////MODELO PARA ELIMINAR UNA ACTIVIDAD
 METODO:DELETE
 URL:http://bd1-p1.azurewebsites.net/api/Actividad/id
@@ -44,9 +46,8 @@ retorna todos los registros de maestros
 
 /////MODELO PARA CREAR UN MAESTRO 
 METODO: POST
-
-retorna -1 si no se creo, si se creo regresa su registro.
 URL: http://bd1-p1.azurewebsites.net/api/Maestro
+CUERPO JSON:
 {
     "Nombres": "Carlos Avalos",
     "Telefono": "35385252",
@@ -61,19 +62,35 @@ URL: http://bd1-p1.azurewebsites.net/api/Maestro
     "Id_maestro": 0 //aqui no va nada al enviar, pero si al retornar
 	
 }
+retorna -1 si no se creo, si se creo regresa su registro.
 ////Metodo para obtener un maestro
 METODO: GET
-URL: http://bd1-p1.azurewebsites.net/api/Maestro/2
-retorna un json con el maestro 
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/id
+CUERPO JSON:
+{
+    "Nombres": "Fernando Paz",
+    "Telefono": "59712973",
+    "Direccion": "zona 18",
+    "Correo": "fernandopaz1995@gmail.com",
+    "Fecha_nacimiento": "12/17/2015 12:00:00 AM",
+    "Password": "1234",
+    "Dpi": "2679783400101",
+    "Foto": "AAEBAQEBAQEB",
+    "Ciclo": "2018",
+    "Admin": "admin",
+    "Id_maestro": 1
+}
+retorna un json con el objeto maestro 
 
 ////Metodo para eliminar un maestro
 Metodo: DELETE
-URL: http://bd1-p1.azurewebsites.net/api/Maestro/2
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/id
 retorna un true o false
 
 ///METODO para hacer update a maestro
 Metodo: PUT
-URL: http://bd1-p1.azurewebsites.net/api/Maestro/3 
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/id
+CUERPO JSON:
 {
     "Nombres": "Andree Avalos",
     "Telefono": "35385252",
@@ -88,4 +105,62 @@ URL: http://bd1-p1.azurewebsites.net/api/Maestro/3
     "Id_maestro": 0
 }
 retorna un true o false
+
+///METODO PARA CREAR UN ALUMNO
+METODO: POST
+URL:http://bd1-p1.azurewebsites.net/api/Alumno
+CUERPO JSON:
+{
+    "Nombre": "Carlos Andree",
+    "Apellido": "Avalos Soto",
+    "Telefono": "35385252",
+    "Tel_tutor": "24385447",
+    "Direccion": "zona 1 de Mixco",
+    "Correo": "aavalosoto@outlook.com",
+    "Fecha_nacimiento": "1/31/1995 12:00:01 AM",
+	"Password": "4321",
+	"Partida_nacimiento": "19954569",
+	"Carnet": 0
+}
+///METODO PARA OBTENER UN ALUMNO
+METODO: GET
+URL:http://bd1-p1.azurewebsites.net/api/Alumno/carnet
+retorna OBJETO TIPO ALUMNO
+{
+    "Nombre": "Carlos Andree",
+    "Apellido": "Avalos Soto",
+    "Telefono": "35385252",
+    "Tel_tutor": "24385447",
+    "Direccion": "zona 1 de Mixco",
+    "Correo": "aavalosoto@outlook.com",
+    "Fecha_nacimiento": "1/31/1995 12:00:00 AM",
+    "Password": "4321",
+    "Carnet": 4,
+    "Foto": "",
+    "Partida_nacimiento": "19954569"
+}
+
+//METODO PARA ELIMINAR UN ALUMNO
+METODO: DELETE
+URL: http://bd1-p1.azurewebsites.net/api/Alumno/id
+RETORNA true o false
+
+//METODO UPDATE DE ALUMNO
+METODO: PUT
+URL: http://bd1-p1.azurewebsites.net/api/Alumno/id
+CUERPO JSON:
+{
+    "Nombre": "Carlos Andree",
+    "Apellido": "Avalos Soto",
+    "Telefono": "35385252",
+    "Tel_tutor": "24385447",
+    "Direccion": "zona 1 de Mixco",
+    "Correo": "aavalosoto@outlook.com",
+    "Fecha_nacimiento": "1/31/1995 12:00:00 AM",
+    "Password": "4321",
+    "Carnet": 4,
+    "Foto": "",
+    "Partida_nacimiento": "19954569"
+}
+retorna true o false
 

@@ -21,16 +21,31 @@ namespace Proyecto1.Controllers
         [HttpGet]
         public string Get()
         {
-            string query = "select actividad.idactividad, actividad.titulo, actividad.descripcion, actividad.valor, materia.nombre, asignacionactividad.nota, asignacionactividad.observacion, asignacionactividad.estado from asignacionactividad \n" +
-    "inner join actividad on \n" +
-    "actividad.idactividad = asignacionactividad.idactividad \n" +
-    "inner join materia on\n" +
-    "actividad.idmateria = materia.idmateria ;";
-            Conexion conn = new Conexion();
-            List<Generico2> lst = conn.metodo_consulta(query, 8);
+            try {
+                string query = "select * from actividad;";
+                Conexion conn = new Conexion();
+                List<Generico2> lst = conn.metodo_consulta(query, 9);
+                List<Actividad> lstActidad = new List<Actividad>();
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    Actividad nuevo = new Actividad(
+                        Convert.ToInt32(lst[i].Lst[0].Parametro.ToString()),
+                        lst[i].Lst[1].Parametro.ToString(),
+                        lst[i].Lst[2].Parametro.ToString(),
+                        lst[i].Lst[3].Parametro.ToString(),
+                        lst[i].Lst[6].Parametro.ToString(),
+                        Convert.ToDouble(lst[i].Lst[5].Parametro.ToString()),
+                        Convert.ToInt32(lst[i].Lst[7].Parametro.ToString()),
+                        Convert.ToInt32(lst[i].Lst[8].Parametro.ToString()));
+                    lstActidad.Add(nuevo);
+                }
 
-            string json = JsonConvert.SerializeObject(lst);
-            return json;
+
+                string json = JsonConvert.SerializeObject(lstActidad);
+                return json;
+
+            } catch { return "NO HAY ACTIVIDADES"; }
+            
         }
 
         // GET: api/Actividad/5
