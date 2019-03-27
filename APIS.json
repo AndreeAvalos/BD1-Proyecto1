@@ -68,7 +68,7 @@ retorna un json con el maestro
 
 ////Metodo para eliminar un maestro
 Metodo: DELETE
-URL: http://bd1-p1.azurewebsites.net/api/Maestro
+URL: http://bd1-p1.azurewebsites.net/api/Maestro/2
 retorna un true o false
 
 ///METODO para hacer update a maestro
