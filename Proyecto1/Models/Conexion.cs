@@ -49,6 +49,30 @@ namespace Proyecto1.Models
             conexion.Close();
             return salida;
         }
+        public bool ExecQuery(string query)
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection
+                {
+                    ConnectionString = cadenaconexion
+                };
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandType = CommandType.Text,
+                    CommandText = query,
+                    Connection = conexion
+                };
+                conexion.Open();
+                cmd.ExecuteReader();
+                conexion.Close();
+                return true;
+
+            }
+            catch { }
+
+            return false;
+        }
 
         public int Post(string nombre_proc, List<Generico> lstcmd)
         {

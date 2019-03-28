@@ -325,4 +325,124 @@ EJEMPLO DE RETORNO:
     }
 ]
 retorna un listado de clases
+///METODO PARA CREAR UNA PREGUNTA 
+METODO: POST
+URL:http://bd1-p1.azurewebsites.net/api/Pregunta
+CUERPO JSON:
+{
+    "Id_pregunta": 0,
+    "Descripcion": "Gestores de Bases de Datos",
+    "Id_examen": 1,
+    "Lst_respuestas": [
+        {
+            "Id_respuesta": 0,
+            "Opcion": "A",
+            "Estado": "false",
+            "Id_pregunta": 1,
+            "RespuestaP": "EXCEL 2018"
+        },
+        {
+            "Id_respuesta": 0,
+            "Opcion": "B",
+            "Estado": "false",
+            "Id_pregunta": 1,
+            "RespuestaP": "WORD 2018"
+        },
+        {
+            "Id_respuesta": 0,
+            "Opcion": "C",
+            "Estado": "true",
+            "Id_pregunta": 1,
+            "RespuestaP": "SQL SERVER"
+        },
+        {
+            "Id_respuesta": 0,
+            "Opcion": "D",
+            "Estado": "true",
+            "Id_pregunta": 1,
+            "RespuestaP": "MYSQL"
+        },
+        {
+            "Id_respuesta": 0,
+            "Opcion": "E",
+            "Estado": "true",
+            "Id_pregunta": 1,
+            "RespuestaP": "POSTGRESQL"
+        }
+    ]
+}
+retorna true o false
+///METODO PARA Eliminar UNA PREGUNTA y sus respuestas
+METODO: DELETE
+URL:http://bd1-p1.azurewebsites.net/api/Pregunta/id
+retorna un true o false
 
+///METODO PARA TRAER las preguntas y respuesas de un examen
+METODO: DELETE
+URL:http://bd1-p1.azurewebsites.net/api/Pregunta/id
+RETORNA EJEMPLO
+[
+    {
+        "Id_pregunta": 4,
+        "Descripcion": "Gestores de Bases de Datos",
+        "Id_examen": 1,
+        "Lst_respuestas": [
+            {
+                "Id_respuesta": 6,
+                "Opcion": "A",
+                "Estado": "false",
+                "Id_pregunta": 4,
+                "RespuestaP": "EXCEL 2018"
+            },
+            {
+                "Id_respuesta": 7,
+                "Opcion": "B",
+                "Estado": "false",
+                "Id_pregunta": 4,
+                "RespuestaP": "WORD 2018"
+            },
+            {
+                "Id_respuesta": 8,
+                "Opcion": "C",
+                "Estado": "true",
+                "Id_pregunta": 4,
+                "RespuestaP": "SQL SERVER"
+            },
+            {
+                "Id_respuesta": 9,
+                "Opcion": "D",
+                "Estado": "true",
+                "Id_pregunta": 4,
+                "RespuestaP": "MYSQL"
+            },
+            {
+                "Id_respuesta": 10,
+                "Opcion": "E",
+                "Estado": "true",
+                "Id_pregunta": 4,
+                "RespuestaP": "POSTGRESQL"
+            }
+        ]
+    },
+    {
+        "Id_pregunta": 5,
+        "Descripcion": "Cuanto es 1+1",
+        "Id_examen": 1,
+        "Lst_respuestas": [
+            {
+                "Id_respuesta": 11,
+                "Opcion": "A",
+                "Estado": "false",
+                "Id_pregunta": 5,
+                "RespuestaP": "0"
+            },
+            {
+                "Id_respuesta": 12,
+                "Opcion": "B",
+                "Estado": "true",
+                "Id_pregunta": 5,
+                "RespuestaP": "2"
+            }
+        ]
+    }
+]
