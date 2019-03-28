@@ -446,3 +446,32 @@ RETORNA EJEMPLO
         ]
     }
 ]
+
+///METODO PARA CALIFICAR PREGUNTA 
+METODO: POST
+URL: 
+CUERPO JSON:
+{
+    "Id_pregunta": 4,
+    "Lst_reespuestas_alumno": [
+        {
+            "Id_RA": 0,
+            "Respuesta": "E",
+            "Id_AE": 1,
+            "Id_pregunta": 0
+        },
+        {
+            "Id_RA": 0,
+            "Respuesta": "D",
+            "Id_AE": 0,
+            "Id_pregunta": 0
+        },
+        {
+            "Id_RA": 0,
+            "Respuesta": "C",
+            "Id_AE": 0,
+            "Id_pregunta": 0
+        }
+    ]
+}
+retorna true si es correcta y false si es falsa 
