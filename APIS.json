@@ -219,5 +219,42 @@ METODO:GET
 URL:http://bd1-p1.azurewebsites.net/api/MaterialCurso/id
 retorna un listado de publicaciones de un materia 
 
+///METODO PARA CREAR UN EXAMEN
+METODO:POST
+URL: http://bd1-p1.azurewebsites.net/api/Examen
+CUERPO JSON:
+{
+    "Id_examen": 0,
+    "Fecha_publicacion": "",
+    "Hora_inicio": "3/30/2019 8:45:00 PM",
+    "Hora_fin": "3/30/2019 10:00:00 PM",
+    "Id_maestro": 4,
+    "Id_materia": 1,
+    "Titulo": "Examen Parcial 1",
+    "Descripcion": "Examen en linea",
+    "Lst_asignados": [
+    	1,
+    	2
+    ]
+}
+retorna true o false
+
+METODO PARA VER EXAMENES ASIGNADOS DE UN ALUMNO
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Examen/id
+FORMATO DE SALIDA:
+    {
+        "Id_AE": 2,
+        "Id_examen": 4,
+        "Titulo": "Examen Parcial 1",
+        "Descripcion": "Examen en linea",
+        "Nombre": "Fisica 4",
+        "Nota": 0
+    }
+retorna una lista de examenes asignados 
+
+METODO PARA ELiminar EXAMENES 
+METODO: DELETE
+URL: http://bd1-p1.azurewebsites.net/api/Examen/id
 
 
