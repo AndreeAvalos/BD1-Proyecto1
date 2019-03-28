@@ -257,4 +257,72 @@ METODO PARA ELiminar EXAMENES
 METODO: DELETE
 URL: http://bd1-p1.azurewebsites.net/api/Examen/id
 
+///////Metodo para crear una carrera
+METODO POST
+URL http://bd1-p1.azurewebsites.net/api/Carrera
+CUERPO JSON:
+{
+    "Id_carrera": 0,
+    "Nombre": "Ciencias y Letras",
+    "Admin": "admin"
+}
+retorna un true o false
+///////Metodo para traer las carreras
+METODO GET
+URL http://bd1-p1.azurewebsites.net/api/Carrera
+retorna todo el listado de cursos
+
+///////Metodo para traer una carrera
+METODO GET
+URL http://bd1-p1.azurewebsites.net/api/Carrera/id
+FORMATO DE RESPUESTA:
+{
+    "Id_carrera": 4,
+    "Nombre": "Ciencias y Letras",
+    "Admin": "admin"
+}
+
+///////Metodo para Eliminar una carrera
+METODO DELETE
+URL http://bd1-p1.azurewebsites.net/api/Carrera/id
+
+
+//////////MEtodo para asignar maestros a carreras
+METODO POST
+URL: http://bd1-p1.azurewebsites.net/api/AsignacionCarrera
+CUERPO JSON:
+{
+    "Id_AC": 0,
+    "Ciclo": "",
+    "Id_maestro": 5,
+    "Id_carrera": 4,
+    "Id_grado": 3,
+    "Id_admin": "admin"
+}
+retorna true o false
+////////METODO PARA VER MAESTROS ASIGNADOS A QUE CLASES
+METODO GET
+URL: http://bd1-p1.azurewebsites.net/api/AsignacionCarrera
+EJEMPLO DE RETORNO:
+[
+    {
+        "Profesor": "Fernando Paz",
+        "Grado": "4to",
+        "Carrera": "Perito Contador ",
+        "Ciclo": "2019"
+    },
+    {
+        "Profesor": "Fernando Paz",
+        "Grado": "5to",
+        "Carrera": "Perito Contador ",
+        "Ciclo": "2019"
+    },
+    {
+        "Profesor": "Carlos Andree Avalos Soto",
+        "Grado": "6to",
+        "Carrera": "Ciencias y Letras",
+        "Ciclo": "2019"
+    }
+]
+retorna un listado de clases
 
