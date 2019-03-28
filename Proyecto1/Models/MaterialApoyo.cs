@@ -8,9 +8,9 @@ namespace Proyecto1.Models
     public class MaterialApoyo
     {
         private string titulo, fecha, enlace, descripcion;
-        private int id_maestro, id_materia;
+        private int id_maestro, id_materia, id_material;
 
-        public MaterialApoyo(string titulo, string fecha, string enlace, string descripcion, int id_maestro, int id_materia)
+        public MaterialApoyo(int id_material, string titulo, string fecha, string enlace, string descripcion, int id_maestro, int id_materia)
         {
             this.titulo = titulo;
             this.fecha = fecha;
@@ -18,6 +18,7 @@ namespace Proyecto1.Models
             this.descripcion = descripcion;
             this.id_maestro = id_maestro;
             this.id_materia = id_materia;
+            this.id_material = id_material;
         }
 
         public string Titulo { get => titulo; set => titulo = value; }
@@ -26,5 +27,6 @@ namespace Proyecto1.Models
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public int Id_maestro { get => id_maestro; set => id_maestro = value; }
         public int Id_materia { get => id_materia; set => id_materia = value; }
+        public int Id_material { get => id_material; set => id_material = value; }
     }
 }

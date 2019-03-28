@@ -191,3 +191,33 @@ retorna true o false
 METODO: GET
 URL: http://bd1-p1.azurewebsites.net/api/Publicacion/id
 retorna una lista de publicaciones
+
+
+
+///METODO PARA CREAR UNA MATERIAL DE APOYO
+METODO:POST
+URL:http://bd1-p1.azurewebsites.net/api/Material
+CUERPO JSON:
+{
+    "Titulo": "Proyecto 1",
+    "Fecha": "",
+    "Enlace": "C:\\fsdfyy",
+    "Descripcion": "Enunciado de proyecto 1",
+    "Id_maestro": 1,
+    "Id_materia": 1
+}
+///METODO PARA ELIMINAR UNA MATERIAL DE APOYO
+METODO:DELETE
+URL:http://bd1-p1.azurewebsites.net/api/Material/id
+retorna un true o false
+///METODO PARA VER MATERIAL DE APOYO por catedratico
+METODO:GET
+URL:http://bd1-p1.azurewebsites.net/api/Material/id
+retorna un listado de publicaciones de un maestro
+///METODO PARA VER MATERIAL DE APOYO por materia
+METODO:GET
+URL:http://bd1-p1.azurewebsites.net/api/MaterialCurso/id
+retorna un listado de publicaciones de un materia 
+
+
+
