@@ -163,4 +163,31 @@ CUERPO JSON:
     "Partida_nacimiento": "19954569"
 }
 retorna true o false
+///METODO CREAR PUBLICACION
+METODO: POST
+URL: http://bd1-p1.azurewebsites.net/api/Publicacion
+CUERPO JSON:
+{
+    "Titulo": "Calificacion",
+    "Descripcion": "Aviso de examen",
+    "Fecha": "3/30/2019 11:59:35 PM",
+    "Id_maestro": 1,
+    "Id_calificacion": 0,
+    "Id_examen": 0,
+    "Id_actividad": 0,
+    "Id_material": 0,
+    "Id_tipo": 5,//TIPO 1 = ACTIVIDAD, TIPO 2 = EXAMEN, TIPO 3 = CALIFICACION, TIPO 4 = MATERIAL DE APOYO, TIPO 5 = AVISO
+    "Id_publicacion": 0
+}
+ESTA API SOLO SIRVE PARA ENVIAR AVISOS, CUANDO SE CREA UNA ACTIVIDAD, EXAMEN O COSAS ASI SE CREAN AUTOMATICAMENTE
+RETORNA UN true o false
 
+///METODO eliminar PUBLICACION
+METODO: DELETE
+URL: http://bd1-p1.azurewebsites.net/api/Publicacion/id
+retorna true o false
+
+////metodo que para obtener publicaciones de un maestro
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/Publicacion/id
+retorna una lista de publicaciones

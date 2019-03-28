@@ -32,7 +32,7 @@ namespace Proyecto1.Controllers
                     lst1[i].Lst[4].Parametro.ToString(),
                     lst1[i].Lst[5].Parametro.ToString(),
                     lst1[i].Lst[6].Parametro.ToString(),
-                    foto,
+                    lst1[i].Lst[7].Parametro.ToString(),
                     lst1[i].Lst[8].Parametro.ToString(),
                     lst1[i].Lst[9].Parametro.ToString(),
                     lst1[i].Lst[10].Parametro.ToString()
@@ -47,7 +47,7 @@ namespace Proyecto1.Controllers
         [HttpGet("{id}", Name = "Get2")]
         public string Get(int id)
         {
-            byte[] foto = { 0, 1, 1, 1, 1, 1, 1, 1, 1 };
+
 
             string query = "Select * from maestro\n" +
                 "where registro = " + id + ";";
@@ -61,7 +61,7 @@ namespace Proyecto1.Controllers
                 lst1[0].Lst[4].Parametro.ToString(),
                 lst1[0].Lst[5].Parametro.ToString(),
                 lst1[0].Lst[6].Parametro.ToString(),
-                foto,
+                lst1[0].Lst[7].Parametro.ToString(),
                 lst1[0].Lst[8].Parametro.ToString(),
                 lst1[0].Lst[9].Parametro.ToString(),
                 lst1[0].Lst[10].Parametro.ToString()
@@ -84,7 +84,7 @@ namespace Proyecto1.Controllers
                 lst.Add(new Generico("email", entrada.Correo, 2));
                 lst.Add(new Generico("fechanac", entrada.Fecha_nacimiento, 3));
                 lst.Add(new Generico("dpi", entrada.Dpi, 2));
-                //lst.Add(new Generico("foto", entrada.Foto, 5));
+                lst.Add(new Generico("fotografia", "-", 2));
                 lst.Add(new Generico("password", entrada.Password, 2));
                 lst.Add(new Generico("ciclo", entrada.Ciclo, 2));
                 lst.Add(new Generico("idadmin", entrada.Admin, 2));
@@ -113,10 +113,10 @@ namespace Proyecto1.Controllers
                     new Generico("nombres", entrada.Nombres, 2),
                     new Generico("telefono", entrada.Telefono, 2),
                     new Generico("direccion", entrada.Direccion, 2),
-                    new Generico("mail", entrada.Correo, 2),
+                    new Generico("email", entrada.Correo, 2),
                     new Generico("fechanac", entrada.Fecha_nacimiento, 3),
                     new Generico("dpi", entrada.Dpi, 2),
-                    //lst.Add(new Generico("foto", entrada.Foto, 5));
+                    new Generico("fotografia", "-", 2),
                     new Generico("password", entrada.Password, 2),
                     new Generico("ciclo", entrada.Ciclo, 2),
                     new Generico("idadmin", entrada.Admin, 2)

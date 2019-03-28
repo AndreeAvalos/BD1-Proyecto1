@@ -93,7 +93,7 @@ namespace Proyecto1.Controllers
                     new Generico("email", entrada.Correo, 2),
                     new Generico("fechanacimiento", entrada.Fecha_nacimiento, 3),
                     new Generico("nopartidanac", entrada.Partida_nacimiento, 2),
-                    //new Generico("foto", entrada.Foto, 2);
+                    new Generico("foto","", 2),
                     new Generico("password", entrada.Password, 2),
                     new Generico("apellidos", entrada.Apellido, 2),
                     new Generico("telefonotutor", entrada.Tel_tutor, 2)
@@ -125,7 +125,7 @@ namespace Proyecto1.Controllers
                     new Generico("email", entrada.Correo, 2),
                     new Generico("fechanacimiento", entrada.Fecha_nacimiento, 3),
                     new Generico("nopartidanac", entrada.Partida_nacimiento, 2),
-                    //new Generico("foto", entrada.Foto, 2);
+                    new Generico("foto", "", 2),
                     new Generico("password", entrada.Password, 2),
                     new Generico("apellidos", entrada.Apellido, 2),
                     new Generico("telefonotutor", entrada.Tel_tutor, 2)

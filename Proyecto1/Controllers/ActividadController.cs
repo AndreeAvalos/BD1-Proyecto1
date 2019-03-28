@@ -21,7 +21,8 @@ namespace Proyecto1.Controllers
         [HttpGet]
         public string Get()
         {
-            try {
+            try
+            {
                 string query = "select * from actividad;";
                 Conexion conn = new Conexion();
                 List<Generico2> lst = conn.metodo_consulta(query, 9);
@@ -36,7 +37,7 @@ namespace Proyecto1.Controllers
                         lst[i].Lst[6].Parametro.ToString(),
                         Convert.ToDouble(lst[i].Lst[5].Parametro.ToString()),
                         Convert.ToInt32(lst[i].Lst[7].Parametro.ToString()),
-                        Convert.ToInt32(lst[i].Lst[8].Parametro.ToString()));
+                        Convert.ToInt32(lst[i].Lst[8].Parametro.ToString()), null);
                     lstActidad.Add(nuevo);
                 }
 
@@ -44,8 +45,9 @@ namespace Proyecto1.Controllers
                 string json = JsonConvert.SerializeObject(lstActidad);
                 return json;
 
-            } catch { return "NO HAY ACTIVIDADES"; }
-            
+            }
+            catch { return "NO HAY ACTIVIDADES"; }
+
         }
 
         // GET: api/Actividad/5
@@ -143,7 +145,7 @@ namespace Proyecto1.Controllers
                 cmd.Parameters.AddWithValue("registro", nuevo.Id_maestro);
                 cmd.Parameters.AddWithValue("idmateria", nuevo.Id_materia);
 
-               int rowsAffected = cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
@@ -172,23 +174,44 @@ namespace Proyecto1.Controllers
                         lst.Add(new Generico("nota", 0.0, 4));
                         lst.Add(new Generico("observacion", "", 2));
                         lst.Add(new Generico("fechasubida", fecha_actual, 3));
-                        //lst.Add(new Generico("archivo", null, 5));
+                        lst.Add(new Generico("archivo", "", 2));
                         lst.Add(new Generico("estado", "Activo", 2));
                         lst.Add(new Generico("idactividad", cod, 1));
                         lst.Add(new Generico("carnet", entrada.Lst_asignados[i], 1));
                         salida = conn.metodo_proc("AsignacionActividadInsert", lst);
                     }
-
-                    return salida;
                 }
-                salida = false;
+                else
+                    salida = false;
             }
             catch
             {
                 salida = false;
             }
 
-            return salida;
+            try
+            {
+                Conexion conn = new Conexion();
+                List<Generico> lst = new List<Generico>
+                {
+                    new Generico("titulo", entrada.Titulo, 2),
+                    new Generico("texto", entrada.Descripcion, 2),
+                    new Generico("fecha", fecha_actual, 3),
+                    new Generico("registro", entrada.Id_maestro, 1),
+                    new Generico("idtipo", 1, 1)
+                };
+                lst.Add(new Generico("idcalificacion", 1, 5));
+                lst.Add(new Generico("idexamen", 1, 5));
+                lst.Add(new Generico("idactividad", cod, 1));
+                lst.Add(new Generico("idmaterialapoyo", 1, 5));
+
+                salida = conn.metodo_proc("PublicacionInsert", lst);
+            }
+            catch {
+                salida = false;
+            }
+
+                return salida;
 
         }
 

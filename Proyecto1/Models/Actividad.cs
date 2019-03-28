@@ -25,18 +25,6 @@ namespace Proyecto1.Models
             this.lst_asignados = lst;
         }
 
-        public Actividad(int id_actividad, string titulo, string descripcion, string fecha_publicacion, string fecha_entrega, double ponderacion, int id_maestro, int id_materia)
-        {
-            this.id_actividad = id_actividad;
-            this.titulo = titulo;
-            this.descripcion = descripcion;
-            this.fecha_publicacion = fecha_publicacion;
-            this.fecha_entrega = fecha_entrega;
-            this.ponderacion = ponderacion;
-            this.id_maestro = id_maestro;
-            this.id_materia = id_materia;
-        }
-
         public string Titulo { get => titulo; set => titulo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Fecha_publicacion { get => fecha_publicacion; set => fecha_publicacion = value; }

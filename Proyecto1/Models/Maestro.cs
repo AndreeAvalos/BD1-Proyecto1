@@ -9,9 +9,9 @@ namespace Proyecto1.Models
     {
         private int id_maestro;
         private string nombres, telefono, direccion, correo, fecha_nacimiento, password, ciclo, dpi, admin;
-        private byte[] foto;
+        private string foto;
 
-        public Maestro(int id_maestro, string nombres, string telefono, string direccion, string correo, string fecha_nacimiento, string dpi, byte[] foto, string password, string ciclo, string admin)
+        public Maestro(int id_maestro, string nombres, string telefono, string direccion, string correo, string fecha_nacimiento, string dpi, string foto, string password, string ciclo, string admin)
         {
             this.id_maestro = id_maestro;
             this.nombres = nombres;
@@ -33,7 +33,7 @@ namespace Proyecto1.Models
         public string Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
         public string Password { get => password; set => password = value; }
         public string Dpi { get => dpi; set => dpi = value; }
-        public byte[] Foto { get => foto; set => foto = value; }
+        public string Foto { get => foto; set => foto = value; }
         public string Ciclo { get => ciclo; set => ciclo = value; }
         public string Admin { get => admin; set => admin = value; }
         public int Id_maestro { get => id_maestro; set => id_maestro = value; }

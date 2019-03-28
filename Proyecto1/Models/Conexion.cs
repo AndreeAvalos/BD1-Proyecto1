@@ -36,7 +36,7 @@ namespace Proyecto1.Models
                     else if (lstcmd[i].Tipo == 4)
                         cmd.Parameters.AddWithValue(lstcmd[i].Titulo, Convert.ToDouble(lstcmd[i].Parametro));
                     else if (lstcmd[i].Tipo == 5)
-                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, null);
+                        cmd.Parameters.AddWithValue(lstcmd[i].Titulo, DBNull.Value);
                 }
 
                 cmd.ExecuteNonQuery();
