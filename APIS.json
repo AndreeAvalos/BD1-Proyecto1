@@ -566,3 +566,51 @@ EJEMPLO RETORNO:
         "Descripcion": ""
     }
 ]
+////////////METODO PARA OBTENER EXAMENES DE MAESTRO 
+METODO: GET
+URL: http://bd1-p1.azurewebsites.net/api/ExamenMaestro/id
+retorna un listado de examenes
+EJEMPLO RETORNO:
+[
+    {
+        "Id_examen": 1,
+        "Fecha_publicacion": "3/26/2019 4:14:00 PM",
+        "Hora_inicio": "3/26/2019 8:00:00 PM",
+        "Hora_fin": "3/26/2019 10:00:00 PM",
+        "Id_maestro": 1,
+        "Id_materia": 1,
+        "Titulo": "Examen corto 1",
+        "Descripcion": "Examen en linea",
+        "Lst_asignados": null
+    },
+    {
+        "Id_examen": 5,
+        "Fecha_publicacion": "3/29/2019 8:39:39 AM",
+        "Hora_inicio": "3/29/2019 7:32:52 AM",
+        "Hora_fin": "3/29/2019 7:32:52 AM",
+        "Id_maestro": 1,
+        "Id_materia": 1,
+        "Titulo": "examentesteo",
+        "Descripcion": "testeo",
+        "Lst_asignados": null
+    }
+]
+///////METODO PARA OBTENER LA ASIGNACION DE ACTIVIDADES
+METODO: POST
+URL: http://bd1-p1.azurewebsites.net/api/getAsignacionActividad
+CUERPO JSON:
+{
+    "Carnet": 1,
+    "Id_examen_actividad": 1
+}
+///////METODO PARA OBTENER LA ASIGNACION DE EXAMEN
+METODO: POST
+URL: http://bd1-p1.azurewebsites.net/api/getAsignacionExamen
+CUERPO JSON:
+{
+    "Carnet": 1,
+    "Id_examen_actividad": 20
+}
+
+
+
