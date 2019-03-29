@@ -449,7 +449,7 @@ RETORNA EJEMPLO
 
 ///METODO PARA CALIFICAR PREGUNTA 
 METODO: POST
-URL: 
+URL: http://bd1-p1.azurewebsites.net/api/CalificarExamen
 CUERPO JSON:
 {
     "Id_pregunta": 4,
@@ -475,3 +475,58 @@ CUERPO JSON:
     ]
 }
 retorna true si es correcta y false si es falsa 
+
+//////////////METODO PARA Crear una calificacion de actividad
+METODO: POST
+URL:http://bd1-p1.azurewebsites.net/api/CalificacionActividad
+CUERPO JSON:
+{
+    "Id_calificacion": 1,
+    "Descripcion": "",
+    "Nota": 10,
+    "Id_asignacion_examen": 0,
+    "Id_asignacion_actividad": 15,
+    "Id_tipo": 1
+}
+retorna true o false
+
+//////////////METODO PARA update de una calificacion de actividad
+METODO: PUT
+URL:http://bd1-p1.azurewebsites.net/api/CalificacionActividad/id
+CUERPO JSON:
+{
+    "Id_calificacion": 1,
+    "Descripcion": "DESCRIPCION",
+    "Nota": 10,
+    "Id_asignacion_examen": 0,
+    "Id_asignacion_actividad": 15,
+    "Id_tipo": 1
+}
+retorna true o false
+//////////////METODO PARA Crear una calificacion de un examen
+METODO: POST
+URL:http://bd1-p1.azurewebsites.net/api/CalificacionExamen
+CUERPO JSON:
+{
+    "Id_calificacion": 0,
+    "Descripcion": "Calificado",
+    "Nota": 50,
+    "Id_asignacion_examen": 2,
+    "Id_asignacion_actividad": 0,
+    "Id_tipo": 2
+}
+retorna true o false
+
+//////////////METODO PARA update de una calificacion de un examen
+METODO: PUT
+URL:http://bd1-p1.azurewebsites.net/api/CalificacionExamen/id
+CUERPO JSON:
+{
+    "Id_calificacion": 1,
+    "Descripcion": "DESCRIPCION",
+    "Nota": 10,
+    "Id_asignacion_examen": 2,
+    "Id_asignacion_actividad": 0,
+    "Id_tipo": 2
+}
+retorna true o false

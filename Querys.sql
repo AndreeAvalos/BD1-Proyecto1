@@ -38,3 +38,27 @@ inner join grado on
 grado.idgrado = asignacioncarrera.idgrado
 inner join carrera on
 carrera.idcarrera = asignacioncarrera.idcarrera
+////////////////////////////////////
+(select asignacionactividad.carnet, actividad.idmateria, actividad.titulo ,calificacion.nota, calificacion.descripcion from calificacion 
+inner join asignacionactividad on
+asignacionactividad.idasignacionactividad = calificacion.idasignacionactividad
+inner join actividad on
+actividad.idactividad = asignacionactividad.idactividad
+where asignacionactividad.carnet = 1 and actividad.idmateria =1
+)
+union
+(select asignacionexamen.carnet,examen.idmateria, examen.titulo,calificacion.nota, calificacion.descripcion from calificacion 
+inner join asignacionexamen on
+asignacionexamen.idasignacionexamen= calificacion.idasignacionexamen
+inner join examen on
+examen.idexamen = asignacionexamen.idexamen
+where asignacionexamen.carnet = 1
+and examen.idmateria =1
+)
+//////////////////////////////////////////
+select respuesta.idrespuesta, respuesta.idpregunta, respuesta.opcion,respuesta.estado from Respuesta
+inner join pregunta on
+pregunta.idpregunta = respuesta.idpregunta 
+where pregunta.idpregunta = 4
+and respuesta.estado = 'true';
+

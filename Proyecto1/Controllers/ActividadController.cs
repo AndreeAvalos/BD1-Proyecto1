@@ -175,7 +175,7 @@ namespace Proyecto1.Controllers
                         lst.Add(new Generico("observacion", "", 2));
                         lst.Add(new Generico("fechasubida", fecha_actual, 3));
                         lst.Add(new Generico("archivo", "", 2));
-                        lst.Add(new Generico("estado", "Activo", 2));
+                        lst.Add(new Generico("estado", "Pendiente", 2));
                         lst.Add(new Generico("idactividad", cod, 1));
                         lst.Add(new Generico("carnet", entrada.Lst_asignados[i], 1));
                         salida = conn.metodo_proc("AsignacionActividadInsert", lst);
