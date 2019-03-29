@@ -378,7 +378,7 @@ URL:http://bd1-p1.azurewebsites.net/api/Pregunta/id
 retorna un true o false
 
 ///METODO PARA TRAER las preguntas y respuesas de un examen
-METODO: DELETE
+METODO: GET
 URL:http://bd1-p1.azurewebsites.net/api/Pregunta/id
 RETORNA EJEMPLO
 [
@@ -611,6 +611,39 @@ CUERPO JSON:
     "Carnet": 1,
     "Id_examen_actividad": 20
 }
-
-
+////METODO PARA OBTENER NOTIFICACIONES DE ALUMNOS
+URL: http://bd1-p1.azurewebsites.net/api/Notificacion/carnet
+RETORNA:
+[
+    {
+        "Titulo": "Examen Parcial 2",
+        "Contenido": "Examen en linea",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    },
+    {
+        "Titulo": "Tarea 13",
+        "Contenido": "Hoja de trabajo",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    },
+    {
+        "Titulo": "Examen Parcial 2",
+        "Contenido": "Examen en linea",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    },
+    {
+        "Titulo": "Examen Parcial 5",
+        "Contenido": "Examen en linea",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    },
+    {
+        "Titulo": "Examen Parcial 3",
+        "Contenido": "Examen en linea",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    },
+    {
+        "Titulo": "Tarea 5",
+        "Contenido": "Hoja de trabajo",
+        "Fecha": "3/29/2019 12:00:00 AM"
+    }
+]
 

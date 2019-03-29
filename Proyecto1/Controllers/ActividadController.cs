@@ -206,12 +206,13 @@ namespace Proyecto1.Controllers
                 lst.Add(new Generico("idmaterialapoyo", 1, 5));
 
                 salida = conn.metodo_proc("PublicacionInsert", lst);
-            }
-            catch {
-                salida = false;
-            }
 
-                return salida;
+            }
+            catch
+            {
+                return false;
+            }
+            return salida;
 
         }
 
