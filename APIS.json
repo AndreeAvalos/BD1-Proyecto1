@@ -530,3 +530,39 @@ CUERPO JSON:
     "Id_tipo": 2
 }
 retorna true o false
+
+//MOSTRAR NOTAS DE ACTIVIDADES Y EXAMENES
+METODO POST
+URL:http://bd1-p1.azurewebsites.net/api/MostrarNota
+CUERPO JSON:
+{
+    "Carnet": 1,
+    "Id_materia": 1,
+    "Titulo": "",
+    "Nota": 0,
+    "Descripcion": ""
+}
+EJEMPLO RETORNO:
+[
+    {
+        "Carnet": 1,
+        "Id_materia": 1,
+        "Titulo": "Examen corto 1",
+        "Nota": 61.5,
+        "Descripcion": "Preguntas malas , por eso la nota"
+    },
+    {
+        "Carnet": 1,
+        "Id_materia": 1,
+        "Titulo": "Examen Parcial 1",
+        "Nota": 50,
+        "Descripcion": "Calificado"
+    },
+    {
+        "Carnet": 1,
+        "Id_materia": 1,
+        "Titulo": "popo",
+        "Nota": 10,
+        "Descripcion": ""
+    }
+]
