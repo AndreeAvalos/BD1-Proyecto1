@@ -52,7 +52,7 @@ namespace Proyecto1.Controllers
         {
             try
             {
-                DateTime currentTime = DateTime.Now;
+
                 Conexion conn = new Conexion();
                 List<Generico> lst = new List<Generico>
                 {
@@ -62,8 +62,38 @@ namespace Proyecto1.Controllers
                     new Generico("@idasignacionactividad", entrada.Id_asignacion_actividad, 1),
                     new Generico("@idtipo", 4, 1)
                 };
+                bool salida = false;
+                DateTime currentTime = DateTime.Now;
+                String hora = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(currentTime, TimeZoneInfo.Local.Id, "Central Standard Time")).ToString("HH:mm:ss");
+                string fecha_actual = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(currentTime, TimeZoneInfo.Local.Id, "Central Standard Time")).ToString();
+                salida = conn.metodo_proc("CalificacionInsert", lst);
 
-                return conn.metodo_proc("CalificacionInsert", lst);
+                string query = "select carnet from asignacionactividad where idasignacionactividad = "+ entrada.Id_asignacion_actividad + "; ";
+                List<Generico2> lst1 = conn.metodo_consulta(query, 1);
+                int id_maestro = Convert.ToInt32(lst1[0].Lst[0].Parametro);
+
+                try
+                {
+                    
+                    lst = new List<Generico>
+                {
+                    new Generico("@titulo", "Calificacion-Actividad", 2),
+                    new Generico("@contenido", entrada.Descripcion, 2),
+                    new Generico("@fecha", fecha_actual, 3),
+                    new Generico("@carnet", id_maestro, 1),
+                    new Generico("@idasignacionactividad", entrada.Id_asignacion_actividad, 1),
+                    new Generico("@idasignacionexamen", 1, 5)
+                };
+
+                    salida = conn.metodo_proc("NotificacionInsert", lst);
+
+                }
+                catch
+                {
+                    return false;
+                }
+
+                return salida;
             }
             catch
             {
