@@ -646,4 +646,218 @@ RETORNA:
         "Fecha": "3/29/2019 12:00:00 AM"
     }
 ]
-
+////////////METODO PARA OBTENER ACTIVIDADES PARA CALIFICAR 
+METODO POST:
+URL: http://bd1-p1.azurewebsites.net/api/ActividadesMaestroMateria
+JSON CUERPO:
+{
+    "Registro": 1,
+    "Materia": 1
+}
+RETORNA JSON:
+[
+    {
+        "Id_asignacionActividad": 1,
+        "Carnet": 1,
+        "Titulo": "Tarea 3",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 2,
+        "Carnet": 2,
+        "Titulo": "Tarea 11",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 3,
+        "Carnet": 1,
+        "Titulo": "Tarea 12",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 4,
+        "Carnet": 2,
+        "Titulo": "Tarea 12",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 5,
+        "Carnet": 1,
+        "Titulo": "Tarea 18",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 6,
+        "Carnet": 2,
+        "Titulo": "Tarea 18",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 7,
+        "Carnet": 1,
+        "Titulo": "test",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 8,
+        "Carnet": 2,
+        "Titulo": "test",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 10,
+        "Carnet": 1,
+        "Titulo": "test",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 11,
+        "Carnet": 1,
+        "Titulo": "test2",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 12,
+        "Carnet": 2,
+        "Titulo": "test2",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 13,
+        "Carnet": 1,
+        "Titulo": "Tarea 25",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 14,
+        "Carnet": 2,
+        "Titulo": "Tarea 25",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 15,
+        "Carnet": 1,
+        "Titulo": "popo",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 16,
+        "Carnet": 1,
+        "Titulo": "test5",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 17,
+        "Carnet": 1,
+        "Titulo": "test8",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 18,
+        "Carnet": 2,
+        "Titulo": "test8",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 19,
+        "Carnet": 1,
+        "Titulo": "test9",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 20,
+        "Carnet": 1,
+        "Titulo": "Tarea 13",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 21,
+        "Carnet": 2,
+        "Titulo": "Tarea 13",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 22,
+        "Carnet": 1,
+        "Titulo": "Tarea 14",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 23,
+        "Carnet": 2,
+        "Titulo": "Tarea 14",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 24,
+        "Carnet": 1,
+        "Titulo": "Tarea 15",
+        "Archivo": "C:\\BD1\\Actividades\\[ACE2]Tarea2_201408580.docx"
+    },
+    {
+        "Id_asignacionActividad": 25,
+        "Carnet": 2,
+        "Titulo": "Tarea 15",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 26,
+        "Carnet": 1,
+        "Titulo": "Tarea 18",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 27,
+        "Carnet": 2,
+        "Titulo": "Tarea 18",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 28,
+        "Carnet": 1,
+        "Titulo": "Tarea 1",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 29,
+        "Carnet": 2,
+        "Titulo": "Tarea 1",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 30,
+        "Carnet": 1,
+        "Titulo": "Tarea 2",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 31,
+        "Carnet": 2,
+        "Titulo": "Tarea 2",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 32,
+        "Carnet": 1,
+        "Titulo": "Tarea 4",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 33,
+        "Carnet": 2,
+        "Titulo": "Tarea 4",
+        "Archivo": ""
+    },
+    {
+        "Id_asignacionActividad": 34,
+        "Carnet": 1,
+        "Titulo": "Tarea 5",
+        "Archivo": "C:\\BD1\\Actividades\\[ACE2]Tarea3_201408580.pdf"
+    },
+    {
+        "Id_asignacionActividad": 35,
+        "Carnet": 2,
+        "Titulo": "Tarea 5",
+        "Archivo": ""
+    }
+]

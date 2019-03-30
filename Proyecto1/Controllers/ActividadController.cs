@@ -61,7 +61,7 @@ namespace Proyecto1.Controllers
                 {
                     ConnectionString = cadenaconexion
                 };
-                string query = "select actividad.idactividad, actividad.titulo, actividad.descripcion, actividad.valor, materia.nombre, asignacionactividad.nota, asignacionactividad.observacion, asignacionactividad.estado from asignacionactividad \n" +
+                string query = "select asignacionactividad.idasignacionactividad, actividad.titulo, actividad.descripcion, actividad.valor, materia.nombre, asignacionactividad.nota, asignacionactividad.observacion, asignacionactividad.estado from asignacionactividad \n" +
                     "inner join actividad on \n" +
                     "actividad.idactividad = asignacionactividad.idactividad \n" +
                     "inner join materia on\n" +
@@ -215,6 +215,29 @@ namespace Proyecto1.Controllers
             return salida;
 
         }
+        //PUT: api/Actividad/5
+        [HttpPut("{id}")]
+        public bool Put(int id, AsignarActividad entrada)
+        {
+            try
+            {
+                Conexion conn = new Conexion();
+                List<Generico> lst = new List<Generico>
+                {
+                    new Generico("@idasignacionactividad", id, 1),
+                    new Generico("@archivo", entrada.Nombre, 2),
+                    new Generico("@estado", entrada.Estado, 2),
+                };
+
+                return conn.metodo_proc("AsignacionActivdadUpdate", lst);
+            }
+            catch
+            {
+                return false;
+
+            }
+        }
+
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]

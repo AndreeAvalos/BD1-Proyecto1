@@ -78,7 +78,7 @@ namespace Proyecto1.Controllers
                     new Generico("texto", entrada.Descripcion, 2),
                     new Generico("fecha", fecha_actual, 3),
                     new Generico("registro", entrada.Id_maestro, 1),
-                    new Generico("idtipo", 1, 1)
+                    new Generico("idtipo", 3, 1)
                 };
                 lst.Add(new Generico("idcalificacion", 1, 5));
                 lst.Add(new Generico("idexamen", 1, 5));

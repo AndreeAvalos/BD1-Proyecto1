@@ -60,7 +60,7 @@ namespace Proyecto1.Controllers
                     new Generico("@descripcion", entrada.Descripcion, 2),
                     new Generico("@idasignacionexamen", entrada.Id_asignacion_examen,5),
                     new Generico("@idasignacionactividad", entrada.Id_asignacion_actividad, 1),
-                    new Generico("@idtipo", entrada.Id_tipo, 1)
+                    new Generico("@idtipo", 4, 1)
                 };
 
                 return conn.metodo_proc("CalificacionInsert", lst);
