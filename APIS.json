@@ -861,3 +861,46 @@ RETORNA JSON:
         "Archivo": ""
     }
 ]
+//////METODO PARA CREAR EN CONTROL DE NOTAS
+METODO POST:
+URL: http://bd1-p1.azurewebsites.net/api/ControlNota
+CUERPO JSON:
+{
+    "Id_control_nota": 2,
+    "Fecha": "",
+    "Nota": 70,
+    "Carnet": 2,
+    "Idmateria": 1
+}
+retorna true o false
+
+//////METODO PARA UPDATE EN CONTROL DE NOTAS
+METODO POST:
+URL: http://bd1-p1.azurewebsites.net/api/ControlNota/Id_control_nota
+CUERPO JSON
+{
+    "Id_control_nota": 2,
+    "Fecha": "",
+    "Nota": 70,
+    "Carnet": 2,
+    "Idmateria": 1
+}
+retorna true o false
+
+//////METODO PARA TRAER NOTAS DE ALUMNO EN CONTROL DE NOTAS
+METODO POST:
+URL: http://bd1-p1.azurewebsites.net/api/ControlNota/carnet
+retona una lista de materias con su nota:
+[
+    {
+        "Id_control_nota": 1,
+        "Fecha": "3/26/2019 12:00:00 AM",
+        "Nota": 70,
+        "Carnet": 1,
+        "Idmateria": 1
+    }
+]
+
+
+
+
